@@ -19,6 +19,10 @@
           <router-link :to="{name: 'profile', params:{user_id: id}}">Profile {{ id }}</router-link>
         </li>
       </ul>
+      <button @click="Contact">Contact</button>
+      <button @click="About">About</button>
+      <button @click="Back">Back</button>
+      <button @click="Next">Next</button>
     </div>
   </div>
 </template>
@@ -30,6 +34,20 @@ export default {
     return {
       userIds: ["1", "3", "2", "4", "5"]
     };
+  },
+  methods: {
+    Contact() {
+      this.$router.push({ name: "contact" });
+    },
+    About() {
+      this.$router.push({ name: "About" });
+    },
+    Back() {
+      this.$router.go(-1);
+    },
+    Next() {
+      this.$router.go(1);
+    }
   }
 };
 </script>
