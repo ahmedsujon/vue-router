@@ -13,6 +13,13 @@
         </li>
       </ul>
     </nav>
+    <div>
+      <ul>
+        <li v-for="(id,index) in userIds" :key="index">
+          <router-link :to="{name: 'profile', params:{user_id: id}}">Profile {{ id }}</router-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -20,7 +27,9 @@
 export default {
   name: "Navbar",
   data() {
-    return {};
+    return {
+      userIds: ["1", "3", "2", "4", "5"]
+    };
   }
 };
 </script>
