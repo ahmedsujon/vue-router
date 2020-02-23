@@ -1,21 +1,29 @@
 <template>
   <div class="profile">
-    <h1>Profile User ID {{ UserId }}</h1>
+    <h1>Profile User ID {{ userId }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "profile",
+  name: "Profile",
   data() {
     return {
-      UserId: this.$route.params.user_id
+      userId: this.$route.params.user_id
     };
+  },
+  methods: {
+    updateId() {
+      this.userId = this.$route.params.user_id;
+    }
+  },
+  watch: {
+    $route: "updateId"
   }
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
   color: green;
 }
