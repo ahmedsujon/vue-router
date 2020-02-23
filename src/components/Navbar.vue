@@ -65,4 +65,8 @@ nav li {
   margin: 0px;
   padding: 8px;
 }
+
+a.router-link-exact-active {
+  color: blue;
+}
 </style>
